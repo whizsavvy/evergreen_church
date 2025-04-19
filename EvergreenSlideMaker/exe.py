@@ -1,4 +1,4 @@
-exec(open("code/setting.py").read())
+exec(open("EvergreenSlideMaker/setting.py").read())
 
 hymn_list = ['십자가를 참으신', '더 원합니다', '하늘 위에 주님 밖에', '우리를 죄에서 구하시려', '주 앙망하는 자', '마라나타', '주님은 나의 사랑']
 
