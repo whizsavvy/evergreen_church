@@ -7,7 +7,7 @@ def normalized_str(str):
   return unicodedata.normalize('NFC', str)
 
 
-folder_path = '..'
+folder_path = 'EvergreenSlideMaker'
 
 
 def find_bible_file(directory, title):
