@@ -1,6 +1,7 @@
 import os
 import re  # 정규 표현식 모듈 추가
 import unicodedata
+import chardet
 
 
 def normalized_str(str):
@@ -27,9 +28,15 @@ def get_bible_verses(directory, title, start_verse, end_verse):
 
     result_verses = []
     collecting = False
+    with open(file_path, "rb") as f:
+        raw = f.read()
+        result = chardet.detect(raw)
+        encoding = result['encoding']
+        print(f"🔍 감지된 인코딩: {encoding}")
 
+  
     # 파일을 열고 각 줄을 읽기
-    with open(file_path, 'r', encoding='utf-8-sig') as file:
+    with open(file_path, 'r', encoding=encoding) as file:
         for line in file:
             # 정규 표현식을 사용하여 장:절 파싱
             match = re.match(r'^[^\d]*(\d+):(\d+)', line)
@@ -51,7 +58,13 @@ def get_bible_verses(directory, title, start_verse, end_verse):
     return '\n'.join(result_verses) if result_verses else "No verses found in the specified range."
 
 def load_hymn(filepath, target_title):
-    with open(filepath, 'r', encoding='utf-8-sig') as file:
+  with open(file_path, "rb") as f:
+        raw = f.read()
+        result = chardet.detect(raw)
+        encoding = result['encoding']
+        print(f"🔍 감지된 인코딩: {encoding}")
+  
+  with open(filepath, 'r', encoding=encoding) as file:
         content = file.read()
         hymn_blocks = re.split(r'\n(?=\d+\.)', content)  # 새 찬송가 구분
 
