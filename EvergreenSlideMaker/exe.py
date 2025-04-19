@@ -26,9 +26,9 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_hymn_slide(prs, hymn_list[0])
     add_hymn_slide(prs, hymn_list[1])
-    add_image_slide(prs, pic_dic+'신앙고백.jpg')
-    add_image_slide(prs, pic_dic+'신앙고백_1.jpg')
-    add_image_slide(prs, pic_dic+'신앙고백_2.jpg')
+    add_image_slide(prs, pic_dic+'신앙고백.png')
+    add_image_slide(prs, pic_dic+'신앙고백_1.png')
+    add_image_slide(prs, pic_dic+'신앙고백_2.png')
     # add_card_slide(prs, input_text= '신앙고백', background_color='000000')
     add_blank_slide(prs)
 
