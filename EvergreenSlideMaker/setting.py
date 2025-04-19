@@ -101,7 +101,22 @@ def load_hymn(filepath, target_title):
             return '\n\n'.join(lyrics)
 
     return "찬송가 제목을 찾을 수 없습니다."
+today = datetime.datetime.now().strftime('%Y-%m-%d')
 
+def wrap_text_by_max_length(text, max_length):
+    words = text.split()
+    wrapped_text = ""
+    current_line = ""
+
+    for word in words:
+        if len(current_line + word) <= max_length:
+            current_line += word + " "
+        else:
+            wrapped_text += current_line.strip() + "\n"
+            current_line = word + " "
+    wrapped_text += current_line.strip()
+
+    return wrapped_text
 
 # 각 슬라이드 유형에 따른 함수 정의
 def add_blank_slide(prs):
