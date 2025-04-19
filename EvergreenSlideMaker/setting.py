@@ -58,13 +58,15 @@ def get_bible_verses(directory, title, start_verse, end_verse):
     return '\n'.join(result_verses) if result_verses else "No verses found in the specified range."
 
 def load_hymn(filepath, target_title):
-  with open(file_path, "rb") as f:
+    # 인코딩 자동 감지
+    with open(filepath, "rb") as f:
         raw = f.read()
         result = chardet.detect(raw)
         encoding = result['encoding']
         print(f"🔍 감지된 인코딩: {encoding}")
-  
-  with open(filepath, 'r', encoding=encoding) as file:
+    
+    # 감지된 인코딩으로 파일 읽기
+    with open(filepath, 'r', encoding=encoding) as file:
         content = file.read()
         hymn_blocks = re.split(r'\n(?=\d+\.)', content)  # 새 찬송가 구분
 
@@ -73,7 +75,10 @@ def load_hymn(filepath, target_title):
                 continue
             lines = block.strip().split('\n')
             header = lines[0]
-            title = re.search(r'\d+\.\s*(.+)', header).group(1)  # 제목 추출
+            title_match = re.search(r'\d+\.\s*(.+)', header)
+            if not title_match:
+                continue
+            title = title_match.group(1)
 
             if title.replace(" ", "") != target_title.replace(" ", ""):
                 continue
@@ -88,7 +93,6 @@ def load_hymn(filepath, target_title):
                 if '후렴 :' in line:
                     refrain_collecting = True
                     refrain = []  # 이전 후렴 내용 초기화
-                    # '후렴 :' 다음의 텍스트도 포함
                     refrain_text = line.split('후렴 :', 1)[-1].strip()
                     if refrain_text:
                         refrain.append(refrain_text)
@@ -96,7 +100,8 @@ def load_hymn(filepath, target_title):
 
                 if re.match(r'\(\d+\)', line) and current_verse:
                     lyrics.append('\n'.join(current_verse))  # 현재 절 저장
-                    lyrics.append('\n'.join(refrain))  # 후렴 추가
+                    if refrain:
+                        lyrics.append('\n'.join(refrain))  # 후렴 추가
                     current_verse = []  # 현재 절 초기화
                     refrain_collecting = False
 
@@ -114,6 +119,7 @@ def load_hymn(filepath, target_title):
             return '\n\n'.join(lyrics)
 
     return "찬송가 제목을 찾을 수 없습니다."
+  
 today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 def wrap_text_by_max_length(text, max_length):
