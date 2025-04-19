@@ -1,3 +1,16 @@
+from pptx import Presentation
+from pptx.util import Pt, Cm
+from pptx.dml.color import RGBColor
+from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.text import PP_ALIGN
+from pptx.enum.text import MSO_AUTO_SIZE  # Correct import location for MSO_AUTO_SIZE
+from pptx.enum.text import MSO_ANCHOR
+import re
+import datetime
+
+today = datetime.datetime.now().strftime('%Y-%m-%d')
+
+
 exec(open("EvergreenSlideMaker/setting.py").read())
 
 hymn_list = ['십자가를 참으신', '더 원합니다', '하늘 위에 주님 밖에', '우리를 죄에서 구하시려', '주 앙망하는 자', '마라나타', '주님은 나의 사랑']
