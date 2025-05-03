@@ -65,7 +65,7 @@ def create_presentation(hymn_list=[]):
     add_bible_slide(prs, directory, "에베소서", "5:17")
     add_bible_slide(prs, directory, "요한복음", "15:7")
     add_bible_slide(prs, directory, "이사야", "40:31")
-    add_bible_slide(prs, directory, "마태복음", "27:5")
+    add_bible_slide(prs, directory, "마태복음", "27:5")
     add_bible_slide(prs, directory, "에베소서", "5:16")
     add_bible_slide(prs, directory, "요한복음", "13:27")
     add_bible_slide(prs, directory, "출애굽기", "7:7")
