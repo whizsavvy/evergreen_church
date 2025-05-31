@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['내 이름 아시죠', '하늘 위에 주님 밖에', '주님의 은혜 넘치네', '아무 것도 두려워 말라', '나의 갈 길 다 가도록', '나의 가는 길', '이 땅의 동과 서 남과 북']
+hymn_list = ['시선', '아 하나님의 은혜로', '난 예수가 좋다오', '은혜', '말씀 앞에서', '보혈을 지나', '비 준비하시니']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -46,29 +46,51 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_card_slide(prs, input_text= '성가대 찬양')
     add_blank_slide(prs)
-    add_bible_slide(prs, directory, "이사야", "43:19")
-    add_subtitle_slide(prs, input_text='광야에 길이 있습니다. (사 43:19)')
+    add_bible_slide(prs, directory, "하박국", "3:1", "3:2")
+    add_subtitle_slide(prs, input_text='진노 중에라도 긍휼을 잊지 마옵소서(하박국 3:1–2)')
     add_blank_slide(prs)
-    add_bible_slide(prs, directory, "이사야", "39:6")
-    add_bible_slide(prs, directory, "예레미야애가", "1:1")
-    add_bible_slide(prs, directory, "이사야", "43:18", "43:19")
-    add_bible_slide(prs, directory, "갈라디아서", "2:20")
-
-    add_subtitle_slide(prs, input_text='1. 광야는 끝이 아니라 과정입니다.')
-    add_bible_slide(prs, directory, "신명기", "8:2")
-    add_bible_slide(prs, directory, "민수기", "14:34")
-    add_subtitle_slide(prs, input_text='2. 하나님은 광야에서 새 일을 행하십니다.')
-    add_bible_slide(prs, directory, "이사야", "43:18")
-    add_bible_slide(prs, directory, "고린도후서", "5:17")
-    add_subtitle_slide(prs, input_text='3. 하나님은 길을 없는 광야에 길을 만드십니다.')
-    add_bible_slide(prs, directory, "이사야", "40:4")
-    add_bible_slide(prs, directory, "호세아", "6:1")
-    add_bible_slide(prs, directory, "신명기", "8:16")
+    add_bible_slide(prs, directory, "하박국", "1:2")
+    add_bible_slide(prs, directory, "하박국", "1:13")
     
+    
+    add_subtitle_slide(prs, input_text='1. 하나님의 답변 앞에 놀라는 하박국')
+    add_bible_slide(prs, directory, "하박국", "1:5", "1:11")
+    
+    add_bible_slide(prs, directory, "하박국", "1:6")
+    add_bible_slide(prs, directory, "하박국", "1:11")
+    add_bible_slide(prs, directory, "하박국", "1:13")
 
-    # add_card_slide(prs, input_text= '성찬')
+    add_subtitle_slide(prs, input_text='2. 내가 파수하는 곳에 서리라')
+    
+    add_bible_slide(prs, directory, "하박국", "2:1")
+    add_bible_slide(prs, directory, "로마서", "4:18", "4:20")
+    add_bible_slide(prs, directory, "시편", "73:16", "73:17")
+    add_bible_slide(prs, directory, "잠언", "16:9")
+
+    add_subtitle_slide(prs, input_text='3. 하나님의 응답하심. 의인은 믿음으로 산다')
+    add_bible_slide(prs, directory, "하박국", "2:4")
+    add_bible_slide(prs, directory, "하박국", "2:14")
+
+    add_subtitle_slide(prs, input_text='4.여호와여, 내가 주의 소문을 듣고 놀랐나이다')
+    add_bible_slide(prs, directory, "하박국", "3:2")
+
+
+    add_subtitle_slide(prs, input_text='5. 주의 일을 이 수년 내에 부흥하게 하옵소서')
+    add_bible_slide(prs, directory, "에스겔", "36:26")
+
+
+    add_subtitle_slide(prs, input_text='6. 진노 중에라도 긍휼을 잊지 마옵소서')
+    add_bible_slide(prs, directory, "호세아", "6:1")
+    add_bible_slide(prs, directory, "출애굽기", "32:13", "32:14")
+    add_bible_slide(prs, directory, "요나", "3:10")
+    add_bible_slide(prs, directory, "하박국", "3:17", "3:18")
+    add_bible_slide(prs, directory, "하박국", "3:19")
+    
     add_hymn_slide(prs, hymn_list[4])
+
+    add_card_slide(prs, input_text= '성찬')
     add_hymn_slide(prs, hymn_list[5])
+    
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '광고')
     add_hymn_slide(prs, hymn_list[6])
