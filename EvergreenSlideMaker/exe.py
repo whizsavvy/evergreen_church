@@ -66,7 +66,7 @@ def create_presentation(hymn_list=[]):
     add_subtitle_slide(prs, input_text='2) 관계전도를 실천합시다')
     add_bible_slide(prs, directory, "마태복음", "5:14", "5:16")
     add_bible_slide(prs, directory, "마태복음", "10:32")
-    add_bible_slide(prs, directory, "사도행전", "1:*")
+    add_bible_slide(prs, directory, "사도행전", "1:8")
                     
     
 
