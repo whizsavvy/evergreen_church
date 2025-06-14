@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['우리는 주의 백성이오니', '오 주여 나의 마음이', '주의 인자하심이', '무화과 나뭇잎이 마르고', '거룩하신 하나님 주께 감사드리세', '비 준비하시니']
+hymn_list = ['나의 사랑하는 책', '. Again 1907', '불을 내려주소서', '마음이 상한 자를', '이런교회 되게 하소서']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -35,8 +35,6 @@ def create_presentation(hymn_list=[]):
     add_hymn_slide(prs, hymn_list[1])
     add_hymn_slide(prs, hymn_list[2])
     add_hymn_slide(prs, hymn_list[3])
-    add_hymn_slide(prs, hymn_list[4])
-
 
 
 
@@ -47,12 +45,29 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_card_slide(prs, input_text= '성가대 찬양')
     add_blank_slide(prs)
-    add_bible_slide(prs, directory, "사도행전", "2:1", "2:4")
-    add_subtitle_slide(prs, input_text='불같이 일어나는 교회 (행 2:1–4)')
+    add_bible_slide(prs, directory, "예레미야", "20:9")
+    add_subtitle_slide(prs, input_text='불붙은 사명자')
     
-    add_bible_slide(prs, directory, "마태복음", "5:16")
-    add_bible_slide(prs, directory, "마태복음", "24:14")
-    add_bible_slide(prs, directory, "누가복음", "12:49")
+    add_bible_slide(prs, directory, "예레미야", "20:9")
+    add_bible_slide(prs, directory, "예레미야", "1:5")
+    add_bible_slide(prs, directory, "예레미야", "7:3")
+    add_bible_slide(prs, directory, "예레미야", "7:23")
+    add_bible_slide(prs, directory, "예레미야", "18:11")
+    add_bible_slide(prs, directory, "예레미야", "20:7", "20:8")
+    add_subtitle_slide(prs, input_text='1) 하나님은 모든 사람이 구원받기를 원하십니다')
+    add_bible_slide(prs, directory, "디모데전서", "2:4")
+    add_subtitle_slide(prs, input_text='2) 예수님은 우리에게 사명을 위임하셨습니다')
+    add_bible_slide(prs, directory, "마태복음", "28:19")
+    add_subtitle_slide(prs, input_text='3) 복음을 들을 기회를 주지 않으면 영혼은 잃어버립니다')
+    add_bible_slide(prs, directory, "누가복음", "19:10")
+    add_bible_slide(prs, directory, "로마서", "10:14")
+    add_subtitle_slide(prs, input_text='1) 내 삶이 먼저 복음이 되어야 합니다')
+    add_bible_slide(prs, directory, "마태복음", "5:14", "5:16")
+    add_subtitle_slide(prs, input_text='2) 관계전도를 실천합시다')
+    add_bible_slide(prs, directory, "마태복음", "5:14", "5:16")
+    add_bible_slide(prs, directory, "마태복음", "10:32")
+    add_bible_slide(prs, directory, "사도행전", "1:*")
+                    
     
 
 
