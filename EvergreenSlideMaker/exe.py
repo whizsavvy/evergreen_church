@@ -67,6 +67,7 @@ def create_presentation(hymn_list=[]):
     add_bible_slide(prs, directory, "마태복음", "5:14", "5:16")
     add_bible_slide(prs, directory, "마태복음", "10:32")
     add_bible_slide(prs, directory, "사도행전", "1:8")
+    add_hymn_slide(prs, hymn_list[4])
                     
     
 
@@ -74,7 +75,7 @@ def create_presentation(hymn_list=[]):
     # add_card_slide(prs, input_text= '성찬')    
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '광고')
-    add_hymn_slide(prs, hymn_list[5])
+    # add_hymn_slide(prs, hymn_list[5])
     # add_hymn_slide(prs,  '하늘에 계신(주기도문)')
     add_card_slide(prs, input_text= '축도')
 
