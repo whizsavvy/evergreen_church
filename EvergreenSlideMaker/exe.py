@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['꽃들도', '내 영혼이 은총 입어', '우리 오늘 눈물로', '나의 가장 낮은 마음', '온 세상 창조주', '마라나타', '이 땅의 동과 서 남과 북']
+hymn_list = ['저 높은 곳을 향하여', '슬픈 마음 있는 사람', '예수 열방의 소망', '오 나의 자비로운 주여', '말씀 앞에서']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -36,39 +36,31 @@ def create_presentation(hymn_list=[]):
     
     add_hymn_slide(prs, hymn_list[2])
     add_hymn_slide(prs, hymn_list[3])
-    add_hymn_slide(prs, hymn_list[4])
-    add_hymn_slide(prs, hymn_list[5])
+    
+
 
 
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_blank_slide(prs)
     add_card_slide(prs, input_text= '대표기도')
-    # add_blank_slide(prs)
-    # add_card_slide(prs, input_text= '성가대 찬양')
-    # add_blank_slide(prs)
-    # add_bible_slide(prs, directory, "예레미야", "20:9")
-    # add_subtitle_slide(prs, input_text='불붙은 사명자')
+    add_blank_slide(prs)
+    add_card_slide(prs, input_text= '성가대 찬양')
+    add_blank_slide(prs)
+    add_bible_slide(prs, directory, "출애굽기", "16:4")
+    add_subtitle_slide(prs, input_text='광야에서 역사하시는 하나님말씀(출애굽기 16:4)')
     
-    # add_bible_slide(prs, directory, "예레미야", "20:9")
-    # add_bible_slide(prs, directory, "예레미야", "1:5")
-    # add_bible_slide(prs, directory, "예레미야", "7:3")
-    # add_bible_slide(prs, directory, "예레미야", "7:23")
-    # add_bible_slide(prs, directory, "예레미야", "18:11")
-    # add_bible_slide(prs, directory, "예레미야", "20:7", "20:8")
-    # add_subtitle_slide(prs, input_text='1) 하나님은 모든 사람이 구원받기를 원하십니다')
-    # add_bible_slide(prs, directory, "디모데전서", "2:4")
-    # add_subtitle_slide(prs, input_text='2) 예수님은 우리에게 사명을 위임하셨습니다')
-    # add_bible_slide(prs, directory, "마태복음", "28:19")
-    # add_subtitle_slide(prs, input_text='3) 복음을 들을 기회를 주지 않으면 영혼은 잃어버립니다')
-    # add_bible_slide(prs, directory, "누가복음", "19:10")
-    # add_bible_slide(prs, directory, "로마서", "10:14")
-    # add_subtitle_slide(prs, input_text='1) 내 삶이 먼저 복음이 되어야 합니다')
-    # add_bible_slide(prs, directory, "마태복음", "5:14", "5:16")
-    # add_subtitle_slide(prs, input_text='2) 관계전도를 실천합시다')
-    # add_bible_slide(prs, directory, "마태복음", "5:14", "5:16")
-    # add_bible_slide(prs, directory, "마태복음", "10:32")
-    # add_bible_slide(prs, directory, "사도행전", "1:8")
-    # add_hymn_slide(prs, hymn_list[4])
+    add_bible_slide(prs, directory, "아모스", "7:8")
+    add_bible_slide(prs, directory, "고린도후서", "13:5")
+    add_bible_slide(prs, directory, "시편", "119:105")
+    add_bible_slide(prs, directory, "마태복음", "4:12")
+    add_bible_slide(prs, directory, "출애굽기", "16:3")
+    add_bible_slide(prs, directory, "출애굽기", "16:4")
+    add_bible_slide(prs, directory, "요한복음", "6:33")
+    add_bible_slide(prs, directory, "출애굽기", "16:4")
+    add_bible_slide(prs, directory, "창세기", "6:22")
+    add_bible_slide(prs, directory, "히브리서", "4:12")
+    
+    add_hymn_slide(prs, hymn_list[4])
                     
     
 
