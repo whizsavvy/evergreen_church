@@ -48,11 +48,11 @@ def create_presentation(hymn_list=[]):
     add_card_slide(prs, input_text= '성가대 찬양')
     add_blank_slide(prs)
     add_bible_slide(prs, directory, "사도행전", "1:8")
-    add_subtitle_slide(prs, input_text='성령과 동행하라 (사도행전 1:8) ')
+    add_subtitle_slide(prs, input_text='성령과 동행하라 (사도행전 1:8)')
     
     add_bible_slide(prs, directory, "사도행전", "1:8")
     add_bible_slide(prs, directory, "고린도후서", "5:17")
-    add_bible_slide(prs, directory, "요한복음", "14:16", "14:17")
+    add_bible_slide(prs, directory, "요한복음", '14:16', '14:17')
     add_bible_slide(prs, directory, "요한일서", "4:4")
     add_bible_slide(prs, directory, "갈라디아서", "5:22", "5:23")
     add_bible_slide(prs, directory, "골로새서", "3:16")
