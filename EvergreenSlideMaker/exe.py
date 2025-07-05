@@ -60,8 +60,8 @@ def create_presentation(hymn_list=[]):
     add_bible_slide(prs, directory, "사도행전", "5:12", "5:13")
     add_bible_slide(prs, directory, "갈라디아서", "2:20")
     add_bible_slide(prs, directory, "디모데후서", "3:12")
-    add_bible_slide(prs, directory, "사도행전", "28:31")
-    add_bible_slide(prs, directory, "시편", "143:10")
+    add_bible_slide(prs, directory, "사도행전", "28:31")
+    add_bible_slide(prs, directory, "시편", "143:10")
     add_bible_slide(prs, directory, "잠언", "3:5", "3:6")
     add_bible_slide(prs, directory, "여호수아", "1:8")
     add_bible_slide(prs, directory, "히브리서", "10:24", "10:25")
