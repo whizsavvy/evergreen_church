@@ -13,11 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['당신을 향한 노래'
-,'내 마음을 가득 채운'
-,'구주의 십자가 보혈로'
-,'주 십자가를 지심으로'
-,'우리는 주의 백성이오니' ]
+hymn_list = ['그리스도의 계절', '주 이름 찬양', '주 안에서 기뻐해', '기뻐하며 승리의 노래 부르리', '행복' ]
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -68,19 +64,8 @@ def create_presentation(hymn_list=[]):
     add_bible_slide(prs, directory, "사도행전", "2:44", "2:46")
     
     
-                    
-    그리스도의 계절 A
-주 이름 찬양 A
-주 안에서 기뻐해 E
-     기뻐하며
-행복 D
-<설교후 >
-빈들에 마른풀같이(찬송183)
-마지막 날에
-
-엔딩) 말씀 앞에서 
-    
-    add_hymn_slide(prs,  '부름받아 나선이 몸')
+    add_hymn_slide(prs,  '빈 들에 마른 풀같이')
+    add_hymn_slide(prs,  '마지막 날에')
     add_card_slide(prs, input_text= '성찬')    
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '광고')
