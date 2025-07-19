@@ -51,31 +51,34 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_card_slide(prs, input_text= '성가대 찬양')
     add_blank_slide(prs)
-    add_bible_slide(prs, directory, "사도행전", "1:12", "1:14")
-    add_subtitle_slide(prs, input_text='순종과 기도로 탄생하는 교회 (행 1:12-14)')
+    add_bible_slide(prs, directory, "사도행전", "2:36", "2:39")
+    add_subtitle_slide(prs, input_text='죄사함을 받으라, 성령의 선물을 받으리니(행 2:36~39)')
     
-    add_bible_slide(prs, directory, "사도행전", "1:6")
-    add_bible_slide(prs, directory, "사도행전", "1:1")
-    add_bible_slide(prs, directory, "사도행전", "1:3")
-    add_bible_slide(prs, directory, "요한복음", "20:28")
-    add_bible_slide(prs, directory, "사도행전", "2:36")
     add_bible_slide(prs, directory, "사도행전", "1:4")
-    add_bible_slide(prs, directory, "시편", "40:1")
-    add_bible_slide(prs, directory, "사도행전", "1:12")
-    add_bible_slide(prs, directory, "고린도전서", "15:6")
-    add_bible_slide(prs, directory, "사도행전", "1:14", "1:15")
-    add_bible_slide(prs, directory, "마태복음", "7:24")
-    add_bible_slide(prs, directory, "사도행전", "1:13")
-    add_bible_slide(prs, directory, "히브리서", "10:25")
-    add_bible_slide(prs, directory, "사도행전", "1:14")
-    add_bible_slide(prs, directory, "누가복음", "8:6")
-    add_bible_slide(prs, directory, "에베소서", "6:18")
-    add_bible_slide(prs, directory, "사도행전", "1:15")
-    add_bible_slide(prs, directory, "요한복음", "1:42")
+    add_bible_slide(prs, directory, "요엘", "2:28")
+    add_bible_slide(prs, directory, "사도행전", "2:17")
+    add_bible_slide(prs, directory, "사도행전", "2:12")
+    add_bible_slide(prs, directory, "사도행전", "2:20", "2:21")
+    add_bible_slide(prs, directory, "사도행전", "2:36")
+    add_bible_slide(prs, directory, "사도행전", "2:37")
+    add_bible_slide(prs, directory, "사도행전", "2:38")
+    add_bible_slide(prs, directory, "사도행전", "2:39")
+    add_bible_slide(prs, directory, "사도행전", "2:41")
+    add_bible_slide(prs, directory, "사도행전", "2:42")
+    add_bible_slide(prs, directory, "사도행전", "2:44", "2:46")
     
     
                     
-    
+    그리스도의 계절 A
+주 이름 찬양 A
+주 안에서 기뻐해 E
+     기뻐하며
+행복 D
+<설교후 >
+빈들에 마른풀같이(찬송183)
+마지막 날에
+
+엔딩) 말씀 앞에서 
     
     add_hymn_slide(prs,  '부름받아 나선이 몸')
     add_card_slide(prs, input_text= '성찬')    
