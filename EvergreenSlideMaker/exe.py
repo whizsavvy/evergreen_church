@@ -47,7 +47,7 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_card_slide(prs, input_text= '성가대 찬양')
     add_blank_slide(prs)
-    add_bible_slide(prs, directory, "사도행전", 3:10", "3:10")
+    add_bible_slide(prs, directory, "사도행전", "3:1", "3:10")
     add_subtitle_slide(prs, input_text='예수의 이름으로 일어나 걸으라 (행 3:1~10)')
     
     add_bible_slide(prs, directory, "히브리서", "4:12")
