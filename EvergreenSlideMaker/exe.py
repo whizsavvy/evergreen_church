@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['갈 길을 밝히 보이시니', '내게 강 같은 평화', '비 준비하시니', '곤한 내 영혼 편히 쉴 곳과', '주님은 나의 힘이요', '마음속에 근심 있는 사람', '하나님의 부르심', '부름 받아 나선 이 몸']
+hymn_list = ['꽃들도', '온 세상 창조주', '주님 큰 영광 받으소서']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -34,10 +34,10 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
 
 
-    add_hymn_slide(prs, hymn_list[3])
-    add_hymn_slide(prs, hymn_list[4])
-    add_hymn_slide(prs, hymn_list[5])
-    add_hymn_slide(prs, hymn_list[6])
+    # add_hymn_slide(prs, hymn_list[3])
+    # add_hymn_slide(prs, hymn_list[4])
+    # add_hymn_slide(prs, hymn_list[5])
+    # add_hymn_slide(prs, hymn_list[6])
     
 
 
@@ -47,33 +47,28 @@ def create_presentation(hymn_list=[]):
     add_card_slide(prs, input_text= '대표기도')
     add_blank_slide(prs)
     add_card_slide(prs, input_text= '성가대 찬양')
-    add_blank_slide(prs)
-    add_bible_slide(prs, directory, "사도행전", "5:42")
-    add_subtitle_slide(prs, input_text="날마다 일어나는 교회 (사도행전 5:42)")
+    # add_blank_slide(prs)
+    # add_bible_slide(prs, directory, "사도행전", "5:42")
+    # add_subtitle_slide(prs, input_text="날마다 일어나는 교회 (사도행전 5:42)")
     
-    add_bible_slide(prs, directory, "사도행전", "5:14", "5:16")
-    add_bible_slide(prs, directory, "사도행전", "5:17", "5:18")
-    add_bible_slide(prs, directory, "사도행전", "5:29")
-    add_bible_slide(prs, directory, "사도행전", "5:32")
-    add_bible_slide(prs, directory, "갈라디아서", "1:10")
-    add_bible_slide(prs, directory, "사도행전", "5:33")
-    add_bible_slide(prs, directory, "사도행전", "5:34")
-    add_bible_slide(prs, directory, "사도행전", "5:36")
-    add_bible_slide(prs, directory, "호세아", "11:8")
-    add_bible_slide(prs, directory, "고린도전서", "10:13")
-    add_bible_slide(prs, directory, "다니엘", "6:10")  # 언급은 없지만 "하루 세 번 기도" 직접적 연결 절 (선택사항)
-    add_bible_slide(prs, directory, "다니엘", "6:22")  # 사자 입 막힘
-    add_bible_slide(prs, directory, "다니엘", "6:23")  # 구출 장면
-    add_bible_slide(prs, directory, "다니엘", "6:24")  # 반전과 형벌
-    add_bible_slide(prs, directory, "다니엘", "6:26")  # 왕의 선포
-    add_bible_slide(prs, directory, "다니엘", "6:27")  # 구원하시는 하나님
-    add_bible_slide(prs, directory, "마태복음", "6:33")
-    add_bible_slide(prs, directory, "다니엘", "12:3")
-
-
-    
-    
-    add_hymn_slide(prs, hymn_list[7])
+    # add_bible_slide(prs, directory, "사도행전", "5:14", "5:16")
+    # add_bible_slide(prs, directory, "사도행전", "5:17", "5:18")
+    # add_bible_slide(prs, directory, "사도행전", "5:29")
+    # add_bible_slide(prs, directory, "사도행전", "5:32")
+    # add_bible_slide(prs, directory, "갈라디아서", "1:10")
+    # add_bible_slide(prs, directory, "사도행전", "5:33")
+    # add_bible_slide(prs, directory, "사도행전", "5:34")
+    # add_bible_slide(prs, directory, "사도행전", "5:36")
+    # add_bible_slide(prs, directory, "호세아", "11:8")
+    # add_bible_slide(prs, directory, "고린도전서", "10:13")
+    # add_bible_slide(prs, directory, "다니엘", "6:10")  # 언급은 없지만 "하루 세 번 기도" 직접적 연결 절 (선택사항)
+    # add_bible_slide(prs, directory, "다니엘", "6:22")  # 사자 입 막힘
+    # add_bible_slide(prs, directory, "다니엘", "6:23")  # 구출 장면
+    # add_bible_slide(prs, directory, "다니엘", "6:24")  # 반전과 형벌
+    # add_bible_slide(prs, directory, "다니엘", "6:26")  # 왕의 선포
+    # add_bible_slide(prs, directory, "다니엘", "6:27")  # 구원하시는 하나님
+    # add_bible_slide(prs, directory, "마태복음", "6:33")
+    # add_bible_slide(prs, directory, "다니엘", "12:3")
 
     # add_card_slide(prs, input_text= '성찬')    
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
