@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['복의 근원 강림하사', '꽃들도', '구주 예수 의지함이', '예수 십자가에 흘린 피로써', '주 예수의 이름 높이세', '충만']
+hymn_list = ['복의 근원 강림하사', '꽃들도', '구주 예수 의지함이', '예수 십자가에 흘린 피로써', '주 예수의 이름 높이세', '충만', '부름 받아 나선 이 몸']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
