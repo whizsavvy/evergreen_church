@@ -47,34 +47,36 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_card_slide(prs, input_text= '성가대 찬양')
     # add_blank_slide(prs)
+    # 제목/본문 (필수)
     add_bible_slide(prs, directory, "사도행전", "8:34", "8:40")
     add_subtitle_slide(prs, input_text="광야에서 만난 빌립과 에디오피아 내시 (사도행전 8:34~40)")
     
-    add_bible_slide(prs, directory, "사도행전", "8:26")
-    add_bible_slide(prs, directory, "사도행전", "8:27")
-    add_bible_slide(prs, directory, "사도행전", "8:29")
-    add_bible_slide(prs, directory, "사도행전", "8:30", "8:31")
-    add_bible_slide(prs, directory, "사도행전", "8:35")
-    add_bible_slide(prs, directory, "사도행전", "8:36")
-    add_bible_slide(prs, directory, "사도행전", "8:39")
-    
-    add_bible_slide(prs, directory, "마태복음", "24:6", "24:8")
+    # RED only, 원고 순서
     add_bible_slide(prs, directory, "마태복음", "24:12")
+    add_bible_slide(prs, directory, "마태복음", "24:6", "24:8")
     add_bible_slide(prs, directory, "마태복음", "24:14")
-    add_bible_slide(prs, directory, "이사야", "7:14")
-    add_bible_slide(prs, directory, "미가", "5:2")
-    add_bible_slide(prs, directory, "스가랴", "9:9")
-    add_bible_slide(prs, directory, "이사야", "53:1", "53:12")
+    
+    add_bible_slide(prs, directory, "사도행전", "8:26")
+    add_bible_slide(prs, directory, "사도행전", "8:29")
+    
     add_bible_slide(prs, directory, "창세기", "6:22")
     add_bible_slide(prs, directory, "누가복음", "5:5", "5:6")
+    
     add_bible_slide(prs, directory, "히브리서", "11:6")
     add_bible_slide(prs, directory, "요한계시록", "3:15")
     add_bible_slide(prs, directory, "잠언", "18:12")
     add_bible_slide(prs, directory, "야고보서", "4:6")
+    
+    add_bible_slide(prs, directory, "사도행전", "8:30", "8:31")
+    add_bible_slide(prs, directory, "사도행전", "8:36")
+    
     add_bible_slide(prs, directory, "전도서", "3:1")
     
+    add_bible_slide(prs, directory, "사도행전", "8:35")
+    add_bible_slide(prs, directory, "사도행전", "8:39")
+    
 
-    add_hymn_slide(prs, hymn_list[5])
+    add_hymn_slide(prs, hymn_list[6])
     # add_hymn_slide(prs, hymn_list[6])
     # add_card_slide(prs, input_text= '성찬')
 
