@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['나의 피난처 예수', '확정되었네', '오 주여 나의 마음이', '주의 인자하심이', '오직 예수 뿐이네', '아 하나님의 은혜로']
+hymn_list = ['비 준비하시니', '하늘 위에 주님 밖에', '성도여 다 함께', '곤한 내 영혼 편히 쉴 곳과', '슬픈 마음 있는 사람', '은혜']
 def create_presentation(hymn_list=[]):
     prs = Presentation()
     prs.slide_width = Cm(33.867)
@@ -42,48 +42,24 @@ def create_presentation(hymn_list=[]):
     # add_blank_slide(prs)
     add_card_slide(prs, input_text= '성가대 찬양')
     # 제목/본문 (필수)
-    add_bible_slide(prs, directory, "시편", "23:1")
-    add_subtitle_slide(prs, input_text="부족함 속에 피는 믿음의 고백 (시편 23:1)")
+    add_bible_slide(prs, directory, "빌립보서", "1:3", "1:4")
+    add_subtitle_slide(prs, input_text="감사와 기쁨으로 (빌립보서 1:3~4)")
     
-    # RED only — 원고 순서 그대로
-    add_bible_slide(prs, directory, "요한복음", "1:12")
-    add_bible_slide(prs, directory, "출애굽기", "6:2", "6:4")
-    add_bible_slide(prs, directory, "예레미야", "33:3")
-    add_bible_slide(prs, directory, "시편", "34:10")
-    add_bible_slide(prs, directory, "빌립보서", "4:11", "4:12")
-    add_bible_slide(prs, directory, "빌립보서", "4:6", "4:7")
-    add_bible_slide(prs, directory, "창세기", "13:15")
+    # RED only — 원고 등장 순서
+    add_bible_slide(prs, directory, "로마서", "1:21")
+    add_bible_slide(prs, directory, "골로새서", "3:15", "3:17")
+    add_bible_slide(prs, directory, "시편", "100:4")
+    add_bible_slide(prs, directory, "데살로니가전서", "5:18")
+    add_bible_slide(prs, directory, "다니엘서", "6:10")
+    add_bible_slide(prs, directory, "욥기", "1:21")
     
-    # (1절) — 본문 절 표기
-    add_bible_slide(prs, directory, "시편", "23:1")
-    
-    # (2절)
-    add_bible_slide(prs, directory, "시편", "23:2")
-    add_bible_slide(prs, directory, "마태복음", "6:31")
-    add_bible_slide(prs, directory, "마태복음", "6:34")
-    
-    # (3절)
-    add_bible_slide(prs, directory, "시편", "23:3")
-    add_bible_slide(prs, directory, "이사야", "54:10")
-    add_bible_slide(prs, directory, "예레미야애가", "3:22", "3:23")
-    add_bible_slide(prs, directory, "창세기", "2:7")
-    
-    # (4절)
-    add_bible_slide(prs, directory, "시편", "23:4")
-    add_bible_slide(prs, directory, "에베소서", "3:18", "3:19")
-    
-    # (5절)
-    add_bible_slide(prs, directory, "시편", "23:5")
-    add_bible_slide(prs, directory, "시편", "37:5")
-    add_bible_slide(prs, directory, "에베소서", "3:20")
-    
-    # (6절)
-    add_bible_slide(prs, directory, "시편", "23:6")
-    
+    add_bible_slide(prs, directory, "빌립보서", "1:4")
+    add_bible_slide(prs, directory, "빌립보서", "4:4")
+    add_bible_slide(prs, directory, "시편", "16:11")
+    add_bible_slide(prs, directory, "골로새서", "3:23")
 
-    add_hymn_slide(prs, '여호와 나의 목자 내게 부족없네')
     
-    add_card_slide(prs, input_text= '성찬')
+    # add_card_slide(prs, input_text= '성찬')
     # add_hymn_slide(prs, hymn_list[5])
 
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
