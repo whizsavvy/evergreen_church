@@ -39,6 +39,7 @@ def create_presentation(hymn_list=[]):
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '대표기도')
     add_card_slide(prs, input_text= '성가대 찬양')
+    add_choir_slides_from_file(prs, box_color="203864")
     
     # 제목/본문 (필수)
     add_bible_slide(prs, directory, "사도행전", "13:1", "13:3")
