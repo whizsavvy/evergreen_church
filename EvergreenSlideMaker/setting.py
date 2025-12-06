@@ -341,3 +341,70 @@ def add_bible_slide(prs, directory, title, start_verse, end_verse='', box_color 
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     slide.background.fill.solid()
     slide.background.fill.fore_color.rgb = RGBColor(0, 255, 0)
+
+from pptx.util import Cm, Pt
+from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE
+from pptx.enum.text import MSO_ANCHOR
+from pptx.dml.color import RGBColor
+
+
+def add_choir_slides_from_file(prs, box_color="203864"):
+    """
+    성가대.txt 파일을 읽어서 2줄씩 PPT 슬라이드에 출력하는 함수.
+    
+    :param prs: python-pptx Presentation 객체
+    :param box_color: 가사 박스 배경색 (RGB hex string, 예: "203864")
+    """
+
+    # 1) 성가대.txt 전체 읽기
+    file_path = f"{folder_path}/Hymn/성가대.txt"
+    with open(file_path, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    # 2) 줄 단위로 나누고, 앞뒤 공백 제거 + 빈 줄 제거
+    lines = [line.strip() for line in text.split("\n") if line.strip() != ""]
+
+    if not lines:
+        return  # 내용이 없으면 그냥 종료
+
+    # 3) 2줄씩 묶어서 슬라이드 하나에 들어갈 블록 만들기
+    blocks = []
+    for i in range(0, len(lines), 2):
+        block = "\n".join(lines[i:i+2])  # 최대 2줄
+        blocks.append(block)
+
+    # 4) 슬라이드 공통 레이아웃/위치 설정값
+    textbox_width = Cm(30.4)
+    textbox_height = Cm(3.3)
+    textbox_y = Cm(15)  # 세로 위치 고정
+
+    # 5) 블록마다 슬라이드 생성
+    for block in blocks:
+        # 빈 슬라이드 레이아웃(보통 6번이 완전 빈 레이아웃)
+        slide = prs.slides.add_slide(prs.slide_layouts[6])
+
+        # 배경색 설정 (초록색)
+        slide.background.fill.solid()
+        slide.background.fill.fore_color.rgb = RGBColor(0, 255, 0)
+
+        # 텍스트 박스의 x 위치: 가운데 정렬
+        textbox_x = (prs.slide_width - textbox_width) / 2
+
+        textbox = slide.shapes.add_textbox(textbox_x, textbox_y,
+                                           textbox_width, textbox_height)
+        frame = textbox.text_frame
+        frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+        frame.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
+
+        # 문단 설정
+        p = frame.paragraphs[0]
+        p.text = block            # 여기 안에 2줄이 \n으로 들어 있음
+        p.alignment = PP_ALIGN.CENTER
+        p.font.size = Pt(35)
+        p.font.name = "Pretendard Semibold"
+        p.font.color.rgb = RGBColor(255, 255, 255)
+
+        # 가사 박스 배경색
+        fill = textbox.fill
+        fill.solid()
+        fill.fore_color.rgb = RGBColor.from_string(box_color)
