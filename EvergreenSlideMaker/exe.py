@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['모든 능력과 모든 권세', '죄에서 자유를 얻게 함은', '예수 열방의 소망', 'Winning All', '나 주님의 기쁨 되기 원하네']
+hymn_list = ['우리 때문에', '죄 짐 맡은 우리 구주', '주의 이름 높이며', '주님 한 분만으로', '엘리야의 날']
 def create_presentation(hymn_list=[]):
     prs = Presentation()
     prs.slide_width = Cm(33.867)
@@ -24,44 +24,48 @@ def create_presentation(hymn_list=[]):
     add_image_slide(prs, pic_dic+'2025.jpg', text='주일 2부 예배')
     add_blank_slide(prs)
     add_hymn_slide(prs, hymn_list[0])
-    # add_hymn_slide(prs, hymn_list[1])
+    add_hymn_slide(prs, hymn_list[1])
 
     add_image_slide(prs, pic_dic+'신앙고백.png')
     add_image_slide(prs, pic_dic+'신앙고백_1.png')
     add_image_slide(prs, pic_dic+'신앙고백_2.png')
     # add_card_slide(prs, input_text= '신앙고백', background_color='000000')
     add_blank_slide(prs)
-    add_hymn_slide(prs, hymn_list[1]) 
+    # add_hymn_slide(prs, hymn_list[1]) 
     add_hymn_slide(prs, hymn_list[2])
     add_hymn_slide(prs, hymn_list[3])
     add_hymn_slide(prs, hymn_list[4])
 
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
-    # add_blank_slide(prs)
     add_card_slide(prs, input_text= '대표기도')
-    # add_blank_slide(prs)
     add_card_slide(prs, input_text= '성가대 찬양')
+    
     # 제목/본문 (필수)
-    add_bible_slide(prs, directory, "사도행전", "12:1", "12:5")
-    add_subtitle_slide(prs, input_text="위기 앞에 무릎 꿇는 교회 (사도행전 12:1~5)")
+    add_bible_slide(prs, directory, "사도행전", "13:1", "13:3")
+    add_subtitle_slide(prs, input_text="닮고 싶은 교회 (사도행전 13:1~3)")
     
     # RED only — 원고 등장 순서
-    add_bible_slide(prs, directory, "사도행전", "12:5")          # “교회는 그를 위하여 간절히…” (핵심 구절)
-    add_bible_slide(prs, directory, "시편", "40:2")
-    add_bible_slide(prs, directory, "마태복음", "11:28", "11:30")
-    add_bible_slide(prs, directory, "히브리서", "11:6")
-    add_bible_slide(prs, directory, "사도행전", "12:13", "12:16") # 로데 장면
-    add_bible_slide(prs, directory, "사도행전", "12:7")           # “그 밤에 주의 사자가…”
-    add_bible_slide(prs, directory, "빌립보서", "4:6", "4:7")
+    add_bible_slide(prs, directory, "사도행전", "13:1")        # 13:1
+    add_bible_slide(prs, directory, "사도행전", "13:2")        # 13:2
+    
+    add_bible_slide(prs, directory, "출애굽기", "4:20")         # 출 4:20
+    add_bible_slide(prs, directory, "갈라디아서", "2:20")       # 갈 2:20
+    
+    add_bible_slide(prs, directory, "사도행전", "13:2")        # 13:2 (재등장)
+    add_bible_slide(prs, directory, "사도행전", "13:3")        # 13:3
+    
+    add_bible_slide(prs, directory, "빌립보서", "1:18")        # 빌 1:18 (본문 인용 구절)
+    add_bible_slide(prs, directory, "마태복음", "28:19", "28:20")  # 마 28:19~20
+    add_bible_slide(prs, directory, "마가복음", "16:17", "16:18")  # 막 16:17~18
 
     
-    # add_card_slide(prs, input_text= '성찬')
-    # add_hymn_slide(prs, hymn_list[5])
+    add_card_slide(prs, input_text= '성찬')
+    add_hymn_slide(prs, '나 같은 죄인 살리신')
 
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '광고')
     # add_hymn_slide(prs, hymn_list[6])
-    add_hymn_slide(prs,  '하나님의 약속')
+    add_hymn_slide(prs,  '창조의 아버지')
     add_card_slide(prs, input_text= '축도')
 
     prs.save(F'{today}_늘푸른교회_.pptx')
