@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['천사들의 노래가 하늘에서 울리네', '예수 열방의 소망']
+hymn_list = ['곤한 내 영혼 편히 쉴 곳과', '주님은 나의 힘이요', '마음속에 근심 있는 사람', '하나님의 부르심', '찬송하며 살리라', '은혜', '아 하나님의 은혜로', '하나님의 부르심']
 def create_presentation(hymn_list=[]):
     prs = Presentation()
     prs.slide_width = Cm(33.867)
@@ -26,7 +26,8 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_hymn_slide(prs, hymn_list[0])
     add_hymn_slide(prs, hymn_list[1])
-    # add_hymn_slide(prs, hymn_list[2])
+    add_hymn_slide(prs, hymn_list[2])
+    add_hymn_slide(prs, hymn_list[3])
     add_card_slide(prs, input_text= '성가대 찬양')
     # add_choir_slides_from_file(prs, box_color="203864")
     
@@ -37,32 +38,44 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     # add_hymn_slide(prs, hymn_list[1]) 
     # add_hymn_slide(prs, hymn_list[3])
-    # add_hymn_slide(prs, hymn_list[4])
-    # add_hymn_slide(prs, hymn_list[5])
+    add_hymn_slide(prs, hymn_list[4])
+    add_hymn_slide(prs, hymn_list[5])
 
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '대표기도')
     
    
-        # 제목/본문 (필수)
-    add_bible_slide(prs, directory, "마태복음", "1:21", "1:23")
-    add_subtitle_slide(prs, input_text="임마누엘로 오신 예수님 (마태복음 1:21~23)")
+    # 제목/본문 (필수)
+    add_bible_slide(prs, directory, "빌립보서", "3:13", "3:14")
+    add_subtitle_slide(prs, input_text="사명을 품고 다시 달려갑시다 (빌립보서 3:13~14)")
     
     # RED only — 원고 순서 그대로
-    add_bible_slide(prs, directory, "누가복음", "2:12")      # “강보에 싸여 구유에…”
-    add_bible_slide(prs, directory, "마태복음", "1:23")      # “임마누엘이라 하리라”
+    add_bible_slide(prs, directory, "빌립보서", "3:13", "3:14")   # 서두 인용
     
-    # (①~③ 단락 전개 순서)
-    add_bible_slide(prs, directory, "마태복음", "1:21")      # 자기 백성을 죄에서 구원
-    add_bible_slide(prs, directory, "마태복음", "1:22")      # 말씀의 성취
-    add_bible_slide(prs, directory, "이사야", "7:14")        # 처녀 잉태 예언
-    add_bible_slide(prs, directory, "마태복음", "1:23")      # 임마누엘 재강조
-    add_bible_slide(prs, directory, "마태복음", "28:20")     # “세상 끝날까지…”
+    # 13절> 관련 전개
+    add_bible_slide(prs, directory, "빌립보서", "3:13")
     
-    # 결론부 인용 순서
-    add_bible_slide(prs, directory, "히브리서", "2:18")
-    add_bible_slide(prs, directory, "히브리서", "13:5")
-    add_bible_slide(prs, directory, "마태복음", "28:20")     # 결론에서 한 번 더
+    # ‘달려간다’(12,14절 표기 전개)
+    add_bible_slide(prs, directory, "빌립보서", "3:12")
+    add_bible_slide(prs, directory, "빌립보서", "3:14")
+    
+    # 1) 뒤에 것을 잊고 앞을 잡다
+    add_bible_slide(prs, directory, "히브리서", "12:1")
+    add_bible_slide(prs, directory, "이사야", "1:18")
+    add_bible_slide(prs, directory, "시편", "103:4", "103:5")
+    add_bible_slide(prs, directory, "히브리서", "10:30")
+    add_bible_slide(prs, directory, "빌립보서", "3:12")           # “이미 얻었다 함도 아니요…”
+    add_bible_slide(prs, directory, "빌립보서", "3:13")           # “뒤에 있는 것은 잊어버리고…”
+    
+    # 2) 푯대를 향하여 달리자
+    add_bible_slide(prs, directory, "빌립보서", "3:14")           # “부름의 상을 위하여…”
+    add_bible_slide(prs, directory, "빌립보서", "1:6")
+    add_bible_slide(prs, directory, "마태복음", "13:31", "13:33")
+    add_bible_slide(prs, directory, "히브리서", "11:1")
+    add_bible_slide(prs, directory, "갈라디아서", "6:9")
+
+    add_hymn_slide(prs, hymn_list[6])
+    add_hymn_slide(prs, hymn_list[7])
     # add_card_slide(prs, input_text= '성찬')
     # add_hymn_slide(prs, '나 같은 죄인 살리신')
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
