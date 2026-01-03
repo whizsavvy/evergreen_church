@@ -86,3 +86,5 @@ def create_presentation(hymn_list=[]):
     add_card_slide(prs, input_text= '축도')
 
     prs.save(F'{today}_늘푸른교회_.pptx')
+
+create_presentation(hymn_list)
