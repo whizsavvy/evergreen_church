@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['부르신 곳에서', '허락하신 새 땅에', '갈 길을 밝히 보이시니', '나로부터 시작되리', '세상의 유혹 시험이', '나는 예배자입니다', '예배자']
+hymn_list = ['Winning All', '영광의 이름 예수', '모든 열방 주 볼 때까지', '비 준비하시니']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -34,51 +34,42 @@ def create_presentation(hymn_list=[]):
     # add_card_slide(prs, input_text= '신앙고백', background_color='000000')
     add_blank_slide(prs)
     add_hymn_slide(prs, hymn_list[2])
-    add_hymn_slide(prs, hymn_list[3])
-    add_hymn_slide(prs, hymn_list[4])
+    # add_hymn_slide(prs, hymn_list[3])
+    # add_hymn_slide(prs, hymn_list[4])
 
     add_card_slide(prs, input_text= '성가대 찬양')
     add_choir_slides_from_file(prs, box_color="203864")
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '대표기도')
        
-    # 제목/본문 (필수)
-    add_bible_slide(prs, directory, "시편", "95:1", "95:7")
-    add_subtitle_slide(prs, input_text="예배는 선택이 아니라 생명이다 (시편 95:1~7 / 요한복음 4:23)")
+        # 제목/본문 (필수)
+    add_bible_slide(prs, directory, "로마서", "12:1", "12:2")
+    add_subtitle_slide(prs, input_text="창조신앙 – 예배는 삶의 방향을 바꾼다 (로마서 12:1~2)")
     
-    # RED only — 원고 순서
-    add_bible_slide(prs, directory, "요한계시록", "3:1")
-    add_bible_slide(prs, directory, "요한계시록", "3:2")
+    # RED only — 원고 등장 순서
+    add_bible_slide(prs, directory, "로마서", "12:1")          # (롬 12:1)
+    add_bible_slide(prs, directory, "로마서", "12:2")          # 2절>
     
-    # 1. 예배는 하나님을 만나는 자리
-    add_bible_slide(prs, directory, "시편", "95:6", "95:7")
-    add_bible_slide(prs, directory, "출애굽기", "20:24")
-    add_bible_slide(prs, directory, "출애굽기", "8:27")
-    add_bible_slide(prs, directory, "출애굽기", "8:25")
-    add_bible_slide(prs, directory, "신명기", "12:5")
-    add_bible_slide(prs, directory, "신명기", "12:11")
+    add_bible_slide(prs, directory, "창세기", "1:1")           # 태초에 하나님이 천지를 창조하시니라
+    add_bible_slide(prs, directory, "창세기", "1:2")           # 혼돈·공허·흑암… 성령 운행
     
-    # 2. 예배가 살아나면 시선이 바뀝니다
-    add_bible_slide(prs, directory, "이사야", "6:1")
-    add_bible_slide(prs, directory, "이사야", "6:5")
-    add_bible_slide(prs, directory, "이사야", "6:8")
-    add_bible_slide(prs, directory, "시편", "73:17")
-    add_bible_slide(prs, directory, "고린도후서", "4:18")
+    add_bible_slide(prs, directory, "히브리서", "11:3")        # 믿음으로 모든 세계가…
+    add_bible_slide(prs, directory, "시편", "33:6")            # 여호와의 말씀으로 하늘이 지음
+    add_bible_slide(prs, directory, "시편", "33:9")            # 말씀하시매 이루어졌으며…
     
-    # 3. 하나님이 찾으시는 예배자
-    add_bible_slide(prs, directory, "요한복음", "4:23")
-    add_bible_slide(prs, directory, "요한복음", "14:6")
-    add_bible_slide(prs, directory, "아모스", "5:24")
+    add_bible_slide(prs, directory, "시편", "90:2")            # 영원부터 영원까지 주는 하나님
+    add_bible_slide(prs, directory, "시편", "139:13", "139:14")# 모태에서 나를 지으심
+    add_bible_slide(prs, directory, "이사야", "43:21")         # 나를 찬송하게 하려 함이니라
+    add_bible_slide(prs, directory, "시편", "147:4", "147:5")  # 별들의 수효를 세시고…
     
-    # 결단부
-    add_bible_slide(prs, directory, "시편", "84:10")
-    add_bible_slide(prs, directory, "마태복음", "4:4")
+    # 결론부 재강조(원고 순서상 재등장)
+    add_bible_slide(prs, directory, "로마서", "12:2")          # 본문 재인용
 
 
-    add_hymn_slide(prs, hymn_list[5])
-    add_hymn_slide(prs, hymn_list[6])
-    add_card_slide(prs, input_text= '성찬')
-    add_hymn_slide(prs, '예수를 나의 구주 삼고')
+
+    add_hymn_slide(prs, hymn_list[3])
+    # add_card_slide(prs, input_text= '성찬')
+    # add_hymn_slide(prs, '예수를 나의 구주 삼고')
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '광고')
     # add_hymn_slide(prs, hymn_list[6])
