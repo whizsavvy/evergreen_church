@@ -348,63 +348,86 @@ from pptx.enum.text import MSO_ANCHOR
 from pptx.dml.color import RGBColor
 
 
-def add_choir_slides_from_file(prs, box_color="203864"):
+def add_choir_slides_from_file(prs, title, box_color="203864"):
     """
-    성가대.txt 파일을 읽어서 2줄씩 PPT 슬라이드에 출력하는 함수.
-    
+    성가대.txt 파일을 읽어서 2줄씩 PPT 슬라이드에 출력.
+    첫 슬라이드에는 hymn과 동일한 형태의 제목 박스를 추가한다.
+
     :param prs: python-pptx Presentation 객체
-    :param box_color: 가사 박스 배경색 (RGB hex string, 예: "203864")
+    :param title: 첫 슬라이드에 표시할 제목 텍스트
+    :param box_color: 가사 박스 배경색 (RGB hex string)
     """
 
-    # 1) 성가대.txt 전체 읽기
+    # 1) 성가대.txt 읽기
     file_path = f"{folder_path}/Hymn/성가대.txt"
     with open(file_path, "r", encoding="utf-8") as f:
         text = f.read()
 
-    # 2) 줄 단위로 나누고, 앞뒤 공백 제거 + 빈 줄 제거
+    # 2) 줄 단위 전처리 (빈 줄 제거)
     lines = [line.strip() for line in text.split("\n") if line.strip() != ""]
 
     if not lines:
-        return  # 내용이 없으면 그냥 종료
+        return
 
-    # 3) 2줄씩 묶어서 슬라이드 하나에 들어갈 블록 만들기
+    # 3) 2줄씩 묶기
     blocks = []
     for i in range(0, len(lines), 2):
-        block = "\n".join(lines[i:i+2])  # 최대 2줄
-        blocks.append(block)
+        blocks.append("\n".join(lines[i:i+2]))
 
-    # 4) 슬라이드 공통 레이아웃/위치 설정값
+    # 4) 공통 레이아웃 값
     textbox_width = Cm(30.4)
     textbox_height = Cm(3.3)
-    textbox_y = Cm(15)  # 세로 위치 고정
+    textbox_y = Cm(15)
 
-    # 5) 블록마다 슬라이드 생성
+    page = 1
+
+    # 5) 슬라이드 생성
     for block in blocks:
-        # 빈 슬라이드 레이아웃(보통 6번이 완전 빈 레이아웃)
         slide = prs.slides.add_slide(prs.slide_layouts[6])
 
-        # 배경색 설정 (초록색)
+        # 배경색
         slide.background.fill.solid()
         slide.background.fill.fore_color.rgb = RGBColor(0, 255, 0)
 
-        # 텍스트 박스의 x 위치: 가운데 정렬
+        # 가사 텍스트 박스
         textbox_x = (prs.slide_width - textbox_width) / 2
+        textbox = slide.shapes.add_textbox(
+            textbox_x, textbox_y, textbox_width, textbox_height
+        )
 
-        textbox = slide.shapes.add_textbox(textbox_x, textbox_y,
-                                           textbox_width, textbox_height)
         frame = textbox.text_frame
         frame.vertical_anchor = MSO_ANCHOR.MIDDLE
         frame.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
 
-        # 문단 설정
         p = frame.paragraphs[0]
-        p.text = block            # 여기 안에 2줄이 \n으로 들어 있음
+        p.text = block
         p.alignment = PP_ALIGN.CENTER
         p.font.size = Pt(35)
         p.font.name = "Pretendard Semibold"
         p.font.color.rgb = RGBColor(255, 255, 255)
 
-        # 가사 박스 배경색
         fill = textbox.fill
         fill.solid()
         fill.fore_color.rgb = RGBColor.from_string(box_color)
+
+        # ✅ 첫 페이지에만 제목 박스 추가 (기존 hymn과 동일)
+        if page == 1:
+            ref_box = slide.shapes.add_textbox(
+                Cm(23.63), Cm(13.5), Cm(8.5), Cm(1.5)
+            )
+            ref_fill = ref_box.fill
+            ref_fill.solid()
+            ref_fill.fore_color.rgb = RGBColor.from_string("FFFFFF")
+
+            ref_frame = ref_box.text_frame
+            ref_frame.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
+            ref_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+
+            ref_p = ref_frame.paragraphs[0]
+            ref_p.text = title
+            ref_p.font.size = Pt(20)
+            ref_p.font.name = "Pretendard Black"
+            ref_p.font.color.rgb = RGBColor(0, 0, 0)
+            ref_p.alignment = PP_ALIGN.CENTER
+
+        page += 1
