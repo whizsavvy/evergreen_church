@@ -13,7 +13,9 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['Winning All', '영광의 이름 예수', '모든 열방 주 볼 때까지', '비 준비하시니']
+hymn_list = ['원하고 바라고 기도합니다'
+, '주 이름 큰 능력 있도다', '주 안에서 기뻐해', '예수님 목마릅니다', '나의 한숨을 바꾸셨네'
+, '나의 죄를 씻기는', '주 하나님 독생자 예수', '기뻐하며 왕께 노래 부르리']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -26,48 +28,39 @@ def create_presentation(hymn_list=[]):
 
     add_blank_slide(prs)
     add_hymn_slide(prs, hymn_list[0])
-    add_hymn_slide(prs, hymn_list[1])
-    
+   
     # add_image_slide(prs, pic_dic+'신앙고백.png')
     add_image_slide(prs, pic_dic+'2026_신앙고백1.JPG')
     add_image_slide(prs, pic_dic+'2026_신앙고백2.JPG')
     # add_card_slide(prs, input_text= '신앙고백', background_color='000000')
     add_blank_slide(prs)
+    add_hymn_slide(prs, hymn_list[1])
     add_hymn_slide(prs, hymn_list[2])
-    # add_hymn_slide(prs, hymn_list[3])
-    # add_hymn_slide(prs, hymn_list[4])
+    add_hymn_slide(prs, hymn_list[3])
+    add_hymn_slide(prs, hymn_list[4])
 
     add_card_slide(prs, input_text= '성가대 찬양')
-    add_choir_slides_from_file(prs, box_color="203864")
+    add_choir_slides_from_file(prs, box_color="203864", title="주 예수 나의 산  소망")
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '대표기도')
        
-        # 제목/본문 (필수)
-    add_bible_slide(prs, directory, "로마서", "12:1", "12:2")
-    add_subtitle_slide(prs, input_text="창조신앙 – 예배는 삶의 방향을 바꾼다 (로마서 12:1~2)")
+    # 제목/본문 (필수)
+    add_bible_slide(prs, directory, "창세기", "1:26", "1:31")
+    add_subtitle_slide(prs, input_text="하나님이 보시기에 심히 좋았더라 (창세기 1:26~31)")
     
     # RED only — 원고 등장 순서
-    add_bible_slide(prs, directory, "로마서", "12:1")          # (롬 12:1)
-    add_bible_slide(prs, directory, "로마서", "12:2")          # 2절>
-    
-    add_bible_slide(prs, directory, "창세기", "1:1")           # 태초에 하나님이 천지를 창조하시니라
-    add_bible_slide(prs, directory, "창세기", "1:2")           # 혼돈·공허·흑암… 성령 운행
-    
-    add_bible_slide(prs, directory, "히브리서", "11:3")        # 믿음으로 모든 세계가…
-    add_bible_slide(prs, directory, "시편", "33:6")            # 여호와의 말씀으로 하늘이 지음
-    add_bible_slide(prs, directory, "시편", "33:9")            # 말씀하시매 이루어졌으며…
-    
-    add_bible_slide(prs, directory, "시편", "90:2")            # 영원부터 영원까지 주는 하나님
-    add_bible_slide(prs, directory, "시편", "139:13", "139:14")# 모태에서 나를 지으심
-    add_bible_slide(prs, directory, "이사야", "43:21")         # 나를 찬송하게 하려 함이니라
-    add_bible_slide(prs, directory, "시편", "147:4", "147:5")  # 별들의 수효를 세시고…
-    
-    # 결론부 재강조(원고 순서상 재등장)
-    add_bible_slide(prs, directory, "로마서", "12:2")          # 본문 재인용
+    add_bible_slide(prs, directory, "창세기", "1:26", "1:27")
+    add_bible_slide(prs, directory, "창세기", "1:28")
+    add_bible_slide(prs, directory, "베드로전서", "2:9")
+    add_bible_slide(prs, directory, "이사야", "43:4")
+    add_bible_slide(prs, directory, "에베소서", "2:10")
+    add_bible_slide(prs, directory, "로마서", "5:8")
+    add_bible_slide(prs, directory, "갈라디아서", "2:20")
 
 
-
-    add_hymn_slide(prs, hymn_list[3])
+    add_hymn_slide(prs, hymn_list[5])
+    add_hymn_slide(prs, hymn_list[6])
+    add_hymn_slide(prs, hymn_list[7])
     # add_card_slide(prs, input_text= '성찬')
     # add_hymn_slide(prs, '예수를 나의 구주 삼고')
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
