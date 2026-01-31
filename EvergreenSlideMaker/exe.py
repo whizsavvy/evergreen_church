@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['빈 들에 마른 풀같이', '세상 흔들리고', '내 마음 다해', '옳은 길 따르라 의의 길을', '주여 지난 밤 내 꿈에']
+hymn_list = ['내 주 되신 주를 참 사랑하고', '완전하신 나의 주', '내가 매일 기쁘게', '온 세상 위하여', 내 영혼이 은총 입어', '주 예수 나의 참 소망', '충만', '보혈을 지나']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -37,7 +37,7 @@ def create_presentation(hymn_list=[]):
     add_hymn_slide(prs, hymn_list[2])
     add_hymn_slide(prs, hymn_list[3])
     add_hymn_slide(prs, hymn_list[4])
-
+    add_hymn_slide(prs, hymn_list[5])
     add_card_slide(prs, input_text= '성가대 찬양')
     add_choir_slides_from_file(prs, box_color="203864", title="주 예수 나의 산  소망")
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
@@ -65,12 +65,13 @@ def create_presentation(hymn_list=[]):
 
 
 
-    # add_card_slide(prs, input_text= '성찬')
-    # add_hymn_slide(prs, '예수를 나의 구주 삼고')
+    add_hymn_slide(prs, hymn_list[6])
+    add_card_slide(prs, input_text= '성찬')
+    add_hymn_slide(prs, '보혈을 지나')
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '광고')
     # add_hymn_slide(prs, hymn_list[6])
-    add_hymn_slide(prs,  '보라 새 일을 행하시리니')
+    add_hymn_slide(prs,  '우린 오늘 눈물로')
     add_card_slide(prs, input_text= '축도')
 
     prs.save(F'{today}_늘푸른교회_.pptx')
