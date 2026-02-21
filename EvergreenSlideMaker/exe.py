@@ -77,14 +77,14 @@ def create_presentation(hymn_list=[]):
     
     add_bible_slide(prs, directory, "사도행전", "1:8")   # 결론부 재강조
     add_bible_slide(prs, directory, "로마서", "8:11")     # 마지막 고백
-
+    add_hymn_slide(prs,  '주님 다시 오실 때 까지')
 
 
     # add_card_slide(prs, input_text= '성찬')
     # add_hymn_slide(prs, '보혈을 지나')
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
     add_card_slide(prs, input_text= '광고')
-    add_hymn_slide(prs,  '주님 다시 오실 때 까지')
+    add_hymn_slide(prs,  '우리 오늘 눈물로')    
     add_card_slide(prs, input_text= '축도')
 
     prs.save(F'{today}_늘푸른교회_.pptx')
