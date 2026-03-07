@@ -63,7 +63,7 @@ def create_presentation(hymn_list=[]):
     add_bible_slide(prs, directory, "예레미야", "32:17")
     add_bible_slide(prs, directory, "말라기", "3:6")
     add_bible_slide(prs, directory, "출애굽기", "14:15")
-    add_hymn_slide(prs, hymn_list[4])
+    add_hymn_slide(prs, hymn_list[5])
 
 
     # add_card_slide(prs, input_text= '성찬')
