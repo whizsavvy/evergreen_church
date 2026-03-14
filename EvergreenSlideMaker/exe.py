@@ -36,7 +36,6 @@ def create_presentation(hymn_list=[]):
     add_hymn_slide(prs, hymn_list[1])
     add_hymn_slide(prs, hymn_list[2])
     add_hymn_slide(prs, hymn_list[3])
-    add_hymn_slide(prs, hymn_list[4])
 
     add_card_slide(prs, input_text= '성가대 찬양')
     # add_choir_slides_from_file(prs, box_color="203864", title="주 예수 나의 산  소망")
