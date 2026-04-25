@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['예수 이름 높이세', '태산을 넘어 험곡에 가도', '나의 하나님', '주님의 임재 앞에서']
+hymn_list = ['주 날 위해 버림 받음으로', '빈들에 마른 풀같이', '내 영혼이 은총 입어', '나는 주의 친구']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -45,20 +45,17 @@ def create_presentation(hymn_list=[]):
     # add_bible_slide(prs, directory, "시편", "46:1", "46:11")
     # add_subtitle_slide(prs, input_text="하나님께 집중하다 – 가만히 있으라 (시편 46:1~11)")
     
-    add_bible_slide(prs, directory, "마태복음", "5:13", "5:16")
-    add_subtitle_slide(prs, input_text="복음은 살아내는 것입니다 (마태복음 5:13~16)")
+    add_bible_slide(prs, directory, "요한복음", "1:40", "1:42")
+    add_subtitle_slide(prs, input_text="복음은 관계를 통해 흐릅니다 (요한복음 1:40~42)")
     
-    add_bible_slide(prs, directory, "마태복음", "28:19", "28:20")
-    add_bible_slide(prs, directory, "베드로전서", "2:9")
-    add_bible_slide(prs, directory, "마태복음", "5:13")
-    add_bible_slide(prs, directory, "레위기", "2:13")
-    add_bible_slide(prs, directory, "에베소서", "5:8")
-    add_bible_slide(prs, directory, "고린도후서", "3:2", "3:3")
-    add_bible_slide(prs, directory, "마태복음", "5:16")
-    add_bible_slide(prs, directory, "베드로전서", "3:15")
-    add_bible_slide(prs, directory, "요한복음", "8:12")
+    add_bible_slide(prs, directory, "고린도전서", "1:21")
+    add_bible_slide(prs, directory, "로마서", "10:14")
+    add_bible_slide(prs, directory, "요한일서", "1:3")
+    add_bible_slide(prs, directory, "요한복음", "4:28", "4:30")
+    add_bible_slide(prs, directory, "누가복음", "14:23")
+    add_bible_slide(prs, directory, "요한복음", "3:16")
 
-    # add_hymn_slide(prs, hymn_list[5])
+    add_hymn_slide(prs, '하나님 아버지의 마음')
     # add_card_slide(prs, input_text= '성찬')
     # add_hymn_slide(prs, '나 같은 죄인 살리신')
     add_card_slide(prs, input_text= '통성기도', background_color='000000')
