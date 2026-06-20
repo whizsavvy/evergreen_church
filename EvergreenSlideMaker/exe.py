@@ -58,7 +58,7 @@ def create_presentation(hymn_list=[]):
     # add_hymn_slide(prs, '부름 받아 나선 이 몸')
     # add_card_slide(prs, input_text= '성찬')
     # add_hymn_slide(prs, '나 같은 죄인 살리신')
-    add_card_slide(prs, input_text= '통성기도', background_color='000000')
+    add_card_slide(prs, input_text= '통성기도')
     add_card_slide(prs, input_text= '광고')
     # add_hymn_slide(prs, hymn_list[5])
     add_hymn_slide(prs,  '빛을 들고 세상으로')    
