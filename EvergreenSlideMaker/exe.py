@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['부르신 곳에서', '그 참혹한 십자가에', ' 오 주여 나의 마음이', '살아계신 주', '하나님의 부르심']
+hymn_list = ['보혈을 지나', '죄에서 자유를 얻게 함은', '크신 내 주님', '주님 약속하신 말씀 위에서', '주님 약속하신 말씀 위에서(B)', '아무 것도 두려워 말라']
 
 def create_presentation(hymn_list=[]):
     prs = Presentation()
@@ -26,7 +26,7 @@ def create_presentation(hymn_list=[]):
 
     add_blank_slide(prs)
     add_hymn_slide(prs, hymn_list[0])
-    # add_hymn_slide(prs, hymn_list[1])
+    add_hymn_slide(prs, hymn_list[1])
     # add_hymn_slide(prs, hymn_list[2])
     
 
@@ -35,25 +35,25 @@ def create_presentation(hymn_list=[]):
     add_image_slide(prs, pic_dic+'2026_신앙고백1.JPG')
     add_image_slide(prs, pic_dic+'2026_신앙고백2.JPG')
     # add_card_slide(prs, input_text= '신앙고백', background_color='000000')
-    add_hymn_slide(prs, hymn_list[1])
     add_hymn_slide(prs, hymn_list[2])
     add_hymn_slide(prs, hymn_list[3])
-    # add_hymn_slide(prs, hymn_list[4])
+    add_hymn_slide(prs, hymn_list[4])
+    add_hymn_slide(prs, hymn_list[5])
     add_blank_slide(prs)
     
     
-    add_bible_slide(prs, directory, "에베소서", "4:12")
-    add_subtitle_slide(prs, input_text="나를 향한 하나님의 부르심 (에베소서 4:12)")
+    # add_bible_slide(prs, directory, "에베소서", "4:12")
+    # add_subtitle_slide(prs, input_text="나를 향한 하나님의 부르심 (에베소서 4:12)")
     
-    add_bible_slide(prs, directory, "고린도후서", "5:17")
-    add_bible_slide(prs, directory, "마태복음", "4:21")
-    add_bible_slide(prs, directory, "시편", "147:3")
-    add_bible_slide(prs, directory, "마가복음", "10:45")
-    add_bible_slide(prs, directory, "베드로전서", "4:10")
-    add_bible_slide(prs, directory, "베드로전서", "2:5")
-    add_bible_slide(prs, directory, "고린도전서", "12:26")
+    # add_bible_slide(prs, directory, "고린도후서", "5:17")
+    # add_bible_slide(prs, directory, "마태복음", "4:21")
+    # add_bible_slide(prs, directory, "시편", "147:3")
+    # add_bible_slide(prs, directory, "마가복음", "10:45")
+    # add_bible_slide(prs, directory, "베드로전서", "4:10")
+    # add_bible_slide(prs, directory, "베드로전서", "2:5")
+    # add_bible_slide(prs, directory, "고린도전서", "12:26")
 
-    add_hymn_slide(prs, hymn_list[4])
+    # add_hymn_slide(prs, hymn_list[4])
 
     # add_hymn_slide(prs, '부름 받아 나선 이 몸')
     # add_card_slide(prs, input_text= '성찬')
