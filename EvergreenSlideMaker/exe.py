@@ -13,7 +13,7 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ["은혜", "비 준비하시니", "주의 친절한 팔에 안기세", "내 영혼이 은총 입어", "주님의 은혜 내게 넘치네", "나는 믿네"]
+hymn_list = ['주 경외하는 것', '날마다 숨 쉬는 순간마다', '높은 산들 흔들리고', '주의 약속하신 말씀 위에서', '비전, 거룩 영원히']
 def create_presentation(hymn_list=[]):
     prs = Presentation()
     prs.slide_width = Cm(33.867)
@@ -26,32 +26,29 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_hymn_slide(prs, hymn_list[0])
     add_hymn_slide(prs, hymn_list[1])
+    add_hymn_slide(prs, hymn_list[2])
+    add_hymn_slide(prs, hymn_list[3])
     # add_image_slide(prs, pic_dic+'신앙고백.png')
     add_image_slide(prs, pic_dic+'2026_신앙고백1.JPG')
     add_image_slide(prs, pic_dic+'2026_신앙고백2.JPG')
     # add_card_slide(prs, input_text= '신앙고백', background_color='000000')
 
-    add_hymn_slide(prs, hymn_list[2])
-    add_hymn_slide(prs, hymn_list[3])
+
     add_hymn_slide(prs, hymn_list[4])
-    add_hymn_slide(prs, hymn_list[5])
+    # add_hymn_slide(prs, hymn_list[5])
     add_blank_slide(prs)
+   
+    add_bible_slide(prs, directory, "사도행전", "7:9", "7:10")
+    add_bible_slide(prs, directory, "히브리서", "11:22")
+    add_subtitle_slide(prs, input_text="당신이 만난 하나님은 어떤 분이십니까?")
+
+
+    # 창세기 39:2,3,21,23
+    add_bible_slide(prs, directory, "창세기", "39:2")
+    add_bible_slide(prs, directory, "창세기", "39:3")
+    add_bible_slide(prs, directory, "창세기", "39:21")
+    add_bible_slide(prs, directory, "창세기", "39:23")
     
-    add_bible_slide(prs, directory, "사무엘상", "13:8", "13:14")
-    add_subtitle_slide(prs, input_text="부득이하여 그리하였나이다 (사무엘상 13:8~14)")
-    
-    add_bible_slide(prs, directory, "사무엘상", "13:12")
-    add_bible_slide(prs, directory, "잠언", "3:5", "3:6")
-    add_bible_slide(prs, directory, "사무엘상", "13:9")
-    add_bible_slide(prs, directory, "시편", "56:3")
-    add_bible_slide(prs, directory, "출애굽기", "14:13")
-    add_bible_slide(prs, directory, "사무엘상", "13:11", "13:12")
-    add_bible_slide(prs, directory, "사무엘상", "15:22")
-    add_bible_slide(prs, directory, "창세기", "3:12")
-    add_bible_slide(prs, directory, "사무엘상", "13:13")
-    add_bible_slide(prs, directory, "시편", "46:10")
-    add_bible_slide(prs, directory, "마태복음", "26:39")
-    add_bible_slide(prs, directory, "빌립보서", "4:6", "4:7")
     
     # add_card_slide(prs, input_text= '성찬')
     add_hymn_slide(prs, "하나님의 부르심")
