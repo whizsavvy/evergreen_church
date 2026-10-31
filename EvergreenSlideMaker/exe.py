@@ -13,7 +13,9 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['주 경외하는 것', '날마다 숨 쉬는 순간마다', '높은 산들 흔들리고', '주의 약속하신 말씀 위에서', '비전, 거룩 영원히']
+hymn_list = ['우리 보좌 앞에 모였네', '주님 큰 영광 받으소서',
+'주님의 은혜 내게 넘치네', '생수의 강'
+,'내 영혼이 은총 입어', '내 구주 예수를 더욱 사랑']
 def create_presentation(hymn_list=[]):
     prs = Presentation()
     prs.slide_width = Cm(33.867)
@@ -26,36 +28,35 @@ def create_presentation(hymn_list=[]):
     add_blank_slide(prs)
     add_hymn_slide(prs, hymn_list[0])
     add_hymn_slide(prs, hymn_list[1])
-    add_hymn_slide(prs, hymn_list[2])
-    add_hymn_slide(prs, hymn_list[3])
     # add_image_slide(prs, pic_dic+'신앙고백.png')
     add_image_slide(prs, pic_dic+'2026_신앙고백1.JPG')
     add_image_slide(prs, pic_dic+'2026_신앙고백2.JPG')
     # add_card_slide(prs, input_text= '신앙고백', background_color='000000')
-
-
+    add_hymn_slide(prs, hymn_list[2])
+    add_hymn_slide(prs, hymn_list[3])
     add_hymn_slide(prs, hymn_list[4])
-    # add_hymn_slide(prs, hymn_list[5])
+    add_hymn_slide(prs, hymn_list[5])
     add_blank_slide(prs)
    
-    add_bible_slide(prs, directory, "사도행전", "7:9", "7:10")
-    add_bible_slide(prs, directory, "히브리서", "11:22")
-    add_subtitle_slide(prs, input_text="당신이 만난 하나님은 어떤 분이십니까?")
-
-
-    # 창세기 39:2,3,21,23
-    add_bible_slide(prs, directory, "창세기", "39:2")
-    add_bible_slide(prs, directory, "창세기", "39:3")
-    add_bible_slide(prs, directory, "창세기", "39:21")
-    add_bible_slide(prs, directory, "창세기", "39:23")
+    add_bible_slide(prs, directory, "사무엘상", "14:1", "14:10")
+    add_subtitle_slide(prs, input_text="사람의 많고 적음이 아니라 (사무엘상 14:1~10)")
+    
+    add_bible_slide(prs, directory, "사무엘상", "14:6")
+    add_bible_slide(prs, directory, "사무엘상", "14:7")
+    add_bible_slide(prs, directory, "전도서", "4:9", "4:10")
+    add_bible_slide(prs, directory, "사무엘상", "14:11")
+    add_bible_slide(prs, directory, "사무엘상", "14:13")
+    add_image_slide(prs, pic_dic+'1101.png')
+    add_bible_slide(prs, directory, "사무엘상", "14:15")
     
     
-    # add_card_slide(prs, input_text= '성찬')
+    add_card_slide(prs, input_text= '성찬')
+    add_hymn_slide(prs,  '나 같은 죄인 살리신')
     add_card_slide(prs, input_text= '통성기도')
     add_card_slide(prs, input_text= '광고')
     # add_card_slide(prs, input_text= '파송기도 및 축복')
     # add_hymn_slide(prs, hymn_list[7])
-    add_hymn_slide(prs,  '주님 말씀하시면')
+    add_hymn_slide(prs,  '나의 기도하는 것 보다')
     
     add_card_slide(prs, input_text= '축도')
 
