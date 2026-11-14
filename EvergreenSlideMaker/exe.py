@@ -13,7 +13,10 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 
 exec(open("EvergreenSlideMaker/setting.py").read())
 
-hymn_list = ['빈 들에 마른 풀같이', '놀라우신 은혜', '슬픈 마음 있는 사람', '주의 사랑을 주의 선하심을']
+hymn_list = ['예수는 내 힘이요',
+'하늘에 계신 아버지', '마귀들과 싸울지라'
+, '주의 아름다움은 말로 다'
+, '거룩 영원히']
 def create_presentation(hymn_list=[]):
     prs = Presentation()
     prs.slide_width = Cm(33.867)
@@ -33,6 +36,7 @@ def create_presentation(hymn_list=[]):
     # add_card_slide(prs, input_text= '신앙고백', background_color='000000')
 
     add_hymn_slide(prs, hymn_list[3])
+    add_hymn_slide(prs, hymn_list[4])
     add_blank_slide(prs)
    
     add_bible_slide(prs, directory, "사무엘상", "14:24", "14:30")
@@ -53,7 +57,7 @@ def create_presentation(hymn_list=[]):
     
     
     # add_card_slide(prs, input_text= '성찬')
-    add_hymn_slide(prs,  '나 같은 죄인 살리신')
+    # add_hymn_slide(prs,  '나 같은 죄인 살리신')
     add_card_slide(prs, input_text= '통성기도')
     add_card_slide(prs, input_text= '광고')
     # add_card_slide(prs, input_text= '파송기도 및 축복')
